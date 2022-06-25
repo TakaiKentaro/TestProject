@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// 通知する
+/// 通知を発行する
 /// </summary>
+/// <typeparam name="T"></typeparam>
 public interface IObservable<T>
 {
     void AddObserver(IObserver<T> target);
