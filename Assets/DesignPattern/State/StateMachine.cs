@@ -3,7 +3,7 @@ using System.Collections.Generic;
 /// <summary>
 /// ステートマシン
 /// </summary>
-public class StateMachine<TOwner>
+public class StateMachine<Event>
 {
     /// <summary>
     /// ステートを表すクラス
@@ -13,8 +13,8 @@ public class StateMachine<TOwner>
         /// <summary>
         /// このステートを管理しているステートマシン
         /// </summary>
-        protected StateMachine<TOwner> StateMachine => stateMachine;
-        internal StateMachine<TOwner> stateMachine;
+        protected StateMachine<Event> StateMachine => stateMachine;
+        internal StateMachine<Event> stateMachine;
         /// <summary>
         /// 遷移の一覧
         /// </summary>
@@ -22,7 +22,7 @@ public class StateMachine<TOwner>
         /// <summary>
         /// このステートのオーナー
         /// </summary>
-        protected TOwner Owner => stateMachine.Owner;
+        protected Event Owner => stateMachine.Owner;
 
         /// <summary>
         /// ステート開始
@@ -69,7 +69,7 @@ public class StateMachine<TOwner>
     /// <summary>
     /// このステートマシンのオーナー
     /// </summary>
-    public TOwner Owner { get; }
+    public Event Owner { get; }
     /// <summary>
     /// 現在のステート
     /// </summary>
@@ -82,7 +82,7 @@ public class StateMachine<TOwner>
     /// ステートマシンを初期化する
     /// </summary>
     /// <param name="owner">ステートマシンのオーナー</param>
-    public StateMachine(TOwner owner)
+    public StateMachine(Event owner)
     {
         Owner = owner;
     }
