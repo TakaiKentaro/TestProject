@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -103,3 +105,5 @@ public static class HierarchyComponent
         property.SetValue(component, isEnabled, null);
     }
 }
+
+#endif
